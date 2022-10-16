@@ -54,7 +54,7 @@ public class Calc implements Calculator {
             firstArgument = Double.parseDouble(firstArgumentAsString);
             secondArgument = Double.parseDouble(secondArgumentAsString);
         } catch (NumberFormatException | NullPointerException e) {
-            System.out.println(e.getMessage());
+            viewer.displayError(e.getMessage());
         }
 
         switch (operator) {
