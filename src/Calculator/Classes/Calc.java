@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 
 public class Calc implements Calculator {
     private static Calc instance;
-    private static final Presenter presenter = new Presenter();
     private Viewer viewer;
 
     public Calc() {}
@@ -22,25 +21,21 @@ public class Calc implements Calculator {
 
     @Override
     public double sum(double a, double b) {
-        presenter.onPlusClicked();
         return a + b;
     }
 
     @Override
     public double subtract(double a, double b) {
-        presenter.onMinusClicked();
         return a - b;
     }
 
     @Override
     public double multiply(double a, double b) {
-        presenter.onMultiplyClicked();
         return a * b;
     }
 
     @Override
     public double divide(double a, double b) {
-        presenter.onDivideClicked();
         if (b == 0 || b < Math.pow(10, -8)) {
             throw new ArithmeticException();
         } else {
@@ -49,7 +44,7 @@ public class Calc implements Calculator {
     }
 
     public void doOperator(String operator, String firstArgumentAsString, String secondArgumentAsString) {
-        double result = 0, firstArgument = 0, secondArgument = 0;
+        double result, firstArgument = 0, secondArgument = 0;
         try {
             firstArgument = Double.parseDouble(firstArgumentAsString);
             secondArgument = Double.parseDouble(secondArgumentAsString);
