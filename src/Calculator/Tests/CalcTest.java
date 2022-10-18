@@ -3,8 +3,10 @@ package Calculator.Tests;
 import Calculator.Classes.Calc;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 
 class CalcTest {
+    @Mock
     Calc calculator = new Calc();
 
     @Test
