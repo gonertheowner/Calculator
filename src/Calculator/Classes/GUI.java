@@ -39,8 +39,12 @@ public class GUI extends JFrame  implements CalculatorPresenter, ActionListener 
         operations.forEach(it -> {
             JButton button = new JButton(it);
             button.addActionListener(listener);
-            buttonsPanel.add(button);
+            buttons.add(button);
         });
+
+        for (int i = 10; i < 16; i++) {
+            buttonsPanel.add(buttons.get(i));
+        }
 
         GridLayout layout = new GridLayout(4,4);
         buttonsPanel.setLayout(layout);
@@ -109,19 +113,19 @@ public class GUI extends JFrame  implements CalculatorPresenter, ActionListener 
     }
 
     public JButton getPlusButton() {
-        return buttons.get(0);
+        return buttons.get(10);
     }
 
     public JButton getMinusButton() {
-        return buttons.get(1);
+        return buttons.get(11);
     }
 
     public JButton getDivideButton() {
-        return buttons.get(2);
+        return buttons.get(12);
     }
 
     public JButton getMultiplyButton() {
-        return buttons.get(3);
+        return buttons.get(13);
     }
 
     public JTextField getResultField() {
