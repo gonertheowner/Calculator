@@ -129,11 +129,11 @@ public class GUI extends JFrame  implements CalculatorPresenter, ActionListener 
     }
 
     public JButton getEqualsButton() {
-        return buttons.get(14);
+        return buttons.get(15);
     }
 
     public JButton getClearButton() {
-        return buttons.get(15);
+        return buttons.get(14);
     }
 
     public JTextField getResultField() {
