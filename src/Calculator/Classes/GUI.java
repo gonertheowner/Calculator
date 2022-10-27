@@ -128,6 +128,14 @@ public class GUI extends JFrame  implements CalculatorPresenter, ActionListener 
         return buttons.get(13);
     }
 
+    public JButton getEqualsButton() {
+        return buttons.get(14);
+    }
+
+    public JButton getClearButton() {
+        return buttons.get(15);
+    }
+
     public JTextField getResultField() {
         return result;
     }
