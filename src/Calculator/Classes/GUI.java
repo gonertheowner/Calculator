@@ -27,7 +27,7 @@ public class GUI extends JFrame  implements CalculatorPresenter, ActionListener 
 
         List<String> operations = Arrays.asList("+", "-", "/", "*", "c", "=");
 
-        for (int i = 0; i <10; i++) {
+        for (int i = 0; i < 10; i++) {
             JButton button = new JButton(Integer.toString(i));
             button.addActionListener(listener);
             buttons.add(button);
@@ -106,5 +106,25 @@ public class GUI extends JFrame  implements CalculatorPresenter, ActionListener 
             operation = s;
         }
         result.setText(a + operation + b);
+    }
+
+    public JButton getPlusButton() {
+        return buttons.get(0);
+    }
+
+    public JButton getMinusButton() {
+        return buttons.get(1);
+    }
+
+    public JButton getDivideButton() {
+        return buttons.get(2);
+    }
+
+    public JButton getMultiplyButton() {
+        return buttons.get(3);
+    }
+
+    public JTextField getResultField() {
+        return result;
     }
 }
