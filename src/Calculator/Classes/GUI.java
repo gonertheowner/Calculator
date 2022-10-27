@@ -127,4 +127,12 @@ public class GUI extends JFrame  implements CalculatorPresenter, ActionListener 
     public JTextField getResultField() {
         return result;
     }
+
+    public void setFirstArgument(String a) {
+        GUI.a = a;
+    }
+
+    public void setSecondArgument(String b) {
+        GUI.b = b;
+    }
 }
