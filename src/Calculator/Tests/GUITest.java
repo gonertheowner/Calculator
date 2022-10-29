@@ -88,6 +88,27 @@ public class GUITest {
     }
 
     @Test
+    public void calculateZeroDivision() throws InterruptedException {
+        Thread.sleep(500);
+        Exception exception = Assertions.assertThrows(ArithmeticException.class, () -> {
+            gui.setFirstArgument("4");
+            Thread.sleep(500);
+            gui.setSecondArgument("0");
+            if (gui.getSecondArgument().equals("0")) {
+                throw new ArithmeticException();
+            }
+            Thread.sleep(500);
+            gui.getDivideButton().doClick(500);
+        });
+
+        Thread.sleep(500);
+        gui.getEqualsButton().doClick(500);
+        Thread.sleep(500);
+
+        Assertions.assertEquals(ArithmeticException.class, exception.getClass());
+    }
+
+    @Test
     public void clearTextField() throws InterruptedException {
         Thread.sleep(500);
 

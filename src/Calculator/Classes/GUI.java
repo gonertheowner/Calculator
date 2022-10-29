@@ -122,6 +122,10 @@ public class GUI extends JFrame  implements CalculatorPresenter, ActionListener 
         result.setText(a + operation + b);
     }
 
+    public String getSecondArgument() {
+        return b;
+    }
+
     public JButton getPlusButton() {
         return buttons.get(10);
     }
