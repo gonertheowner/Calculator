@@ -26,7 +26,7 @@ public class BDDConfiguration extends JUnitStories {
 
     @Override
     public InjectableStepsFactory stepsFactory() {
-        return new InstanceStepsFactory(configuration(), new SummaryBDDTest());
+        return new InstanceStepsFactory(configuration(), new BDDTests());
     }
 
     @Override

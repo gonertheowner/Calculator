@@ -6,7 +6,7 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Assert;
 
-public class SummaryBDDTest {
+public class BDDTests {
     private double firstArgument;
     private double secondArgument;
     private double result;
@@ -20,7 +20,7 @@ public class SummaryBDDTest {
     }
 
     @When("User call $choice method")
-    public void summary(String choice)
+    public void toDo(String choice)
     {
         switch (choice) {
             case "sum" -> result = calc.sum(firstArgument, secondArgument);
