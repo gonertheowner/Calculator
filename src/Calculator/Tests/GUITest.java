@@ -1,17 +1,30 @@
 package Calculator.Tests;
 
 import Calculator.Classes.GUI;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.mockito.Mock;
 
 public class GUITest {
     @Mock
     GUI gui = new GUI();
 
+    @BeforeEach
+    void displayGUI() {
+        gui.display();
+    }
+
+    @AfterEach
+    void clearGUI() {
+        gui.clear();
+    }
+
+    @AfterAll
+    static void closeGUI() {
+        GUI.close();
+    }
+
     @Test
     public void calculateSummary() throws InterruptedException {
-        gui.display();
         Thread.sleep(500);
 
         gui.setFirstArgument("3");
@@ -28,7 +41,6 @@ public class GUITest {
 
     @Test
     public void calculateSubtraction() throws InterruptedException {
-        gui.display();
         Thread.sleep(500);
 
         gui.setFirstArgument("3");
@@ -45,7 +57,6 @@ public class GUITest {
 
     @Test
     public void calculateMultiplication() throws InterruptedException {
-        gui.display();
         Thread.sleep(500);
 
         gui.setFirstArgument("3");
@@ -62,7 +73,6 @@ public class GUITest {
 
     @Test
     public void calculateDivision() throws InterruptedException {
-        gui.display();
         Thread.sleep(500);
 
         gui.setFirstArgument("4");
@@ -79,7 +89,6 @@ public class GUITest {
 
     @Test
     public void clearTextField() throws InterruptedException {
-        gui.display();
         Thread.sleep(500);
 
         gui.setFirstArgument("3");

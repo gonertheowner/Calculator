@@ -5,13 +5,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class GUI extends JFrame  implements CalculatorPresenter, ActionListener {
     static String  a = "", b = "" , operation = "";
-    static  JFrame frame;
+    public static  JFrame frame;
     Calc calculator = Calc.getInstance();
     public JPanel buttonsPanel = new JPanel();
     public ArrayList<JButton> buttons = new ArrayList<>();
@@ -56,6 +57,15 @@ public class GUI extends JFrame  implements CalculatorPresenter, ActionListener 
         frame.add(panel);
         frame.setSize(360, 180);
         frame.setVisible(true);
+    }
+
+    public void clear() {
+        getClearButton().doClick();
+    }
+
+    public static void close() {
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
     }
 
     @Override
